@@ -8,6 +8,15 @@ spring:
 #    자바 config로 설정하기 위해 주석 처리
   cloud:
     gateway:
+      # 전역 필터 적용 (글로벌 필터)
+      default-filters:
+        - name: GlobalFilter
+          args:
+            message: 메세지다 이놈아
+            pre: true
+            post: true
+            # pre, post 는 boolean 타입으로 true or false
+
       routes: # 개별 마이크로서비스 정보를 ROUTES에 기입
       - id : first-service
         uri: http://localhost:8001/
