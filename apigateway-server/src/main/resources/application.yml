@@ -6,15 +6,19 @@ spring:
     name: apigateway-server
     
 #    자바 config로 설정하기 위해 주석 처리
-#  cloud:
-#    gateway:
-#      routes: # 개별 마이크로서비스 정보를 ROUTES에 기입
-#      - id : first-service
-#        uri: http://localhost:8001/
-#        predicates:
-#          - Path=/first-service/**
-#
-#      - id : second-service
-#        uri: http://localhost:8002/
-#        predicates:
-#          - Path=/second-service/**
+  cloud:
+    gateway:
+      routes: # 개별 마이크로서비스 정보를 ROUTES에 기입
+      - id : first-service
+        uri: http://localhost:8001/
+        predicates:
+          - Path=/first-service/**
+        filters: # yml 파일에 필터 적용법
+          - AddRequestHeader=f-req, f-req-v
+          - AddResponseHeader=f-res, f-res-v
+          # 필터명, 파라미터명이 해당 포트의 서비스(프로젝트)와 필터명, 파라미터명이 같아야 한다.
+
+      - id : second-service
+        uri: http://localhost:8002/
+        predicates:
+          - Path=/second-service/**
