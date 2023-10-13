@@ -13,20 +13,20 @@ public class FilterConfig {
 
     // Bean만 주석 처리하면 해당 메서드가 리턴하는 빈이 적재되지 않으므로 설정도 초기화됨
 //    @Bean
-    public RouteLocator gatewayRoutes(RouteLocatorBuilder routeLocatorBuilder) {
-        return routeLocatorBuilder.routes()
-                .route(r -> r.path("/first-service/**")
-                        .filters(f -> f.addRequestHeader("f-req", "f-req-v")
-                                .addResponseHeader("f-res", "f-res-v"))
-                        .uri("http://localhost:8001/")
-                ) // 개별 라우팅 정보를 등록하는 route() 메서드
-                .route(r -> r.path("/second-service/**")
-                        .filters(f -> f.addRequestHeader("s-req", "s-req-v")
-                                .addResponseHeader("s-res", "s-res-v"))
-                        .uri("http://localhost:8002/")
-                )
-                // 모든 설정이 끝나면
-                .build(); // 빌더 패턴 종료
-    }
+//    public RouteLocator gatewayRoutes(RouteLocatorBuilder routeLocatorBuilder) {
+//        return routeLocatorBuilder.routes()
+//                .route(r -> r.path("/first-service/**")
+//                        .filters(f -> f.addRequestHeader("f-req", "f-req-v")
+//                                .addResponseHeader("f-res", "f-res-v"))
+//                        .uri("http://localhost:8001/")
+//                ) // 개별 라우팅 정보를 등록하는 route() 메서드
+//                .route(r -> r.path("/second-service/**")
+//                        .filters(f -> f.addRequestHeader("s-req", "s-req-v")
+//                                .addResponseHeader("s-res", "s-res-v"))
+//                        .uri("http://localhost:8002/")
+//                )
+//                // 모든 설정이 끝나면
+//                .build(); // 빌더 패턴 종료
+//    }
     
 }
