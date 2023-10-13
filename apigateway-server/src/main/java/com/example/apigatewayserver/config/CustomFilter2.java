@@ -1,7 +1,9 @@
 package com.example.apigatewayserver.config;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.OrderedGatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.core.Ordered;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
@@ -27,6 +29,17 @@ public class CustomFilter2 extends AbstractGatewayFilterFactory<CustomFilter2.Co
             }));
         });
     }
+
+    /*
+     OrderedGatewayFilter
+     - 실행 순번을 지정할 수 있다.
+     */
+//    @Override
+//    public GatewayFilter apply(Config config) {
+//        GatewayFilter gatewayFilter = new OrderedGatewayFilter((exchange, chain) -> {
+//
+//        }, Ordered.LOWEST_PRECEDENCE); // 순위 (숫자가 낮은 순) 별로 실행
+//    }
 
 
     public static class Config {
