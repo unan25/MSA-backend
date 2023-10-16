@@ -1,2 +1,19 @@
 server:
-  port: 8002
+  port: 0
+
+spring:
+  application:
+    name: second-service
+
+eureka:
+  instance:
+    # 각 인스턴스별로 유레카에 보여지는 표기
+    # 각 애플리케이션 이름으로 설정
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true # 유레카 서버에 등록
+    fetch-registry: true # 유레카 서버에서 서버 상태 지속적 잠시
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka # 유레카 서버의 주소 / discovery-server
+#      defaultZone: http://127.0.0.1:8000/eureka # apigateway-server
+
