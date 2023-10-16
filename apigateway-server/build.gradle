@@ -31,7 +31,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:4.0.3'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.0.3'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
 
 }
