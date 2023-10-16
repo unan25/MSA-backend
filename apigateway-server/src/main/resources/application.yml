@@ -4,7 +4,8 @@ server:
 spring:
   application:
     name: apigateway-server
-    
+
+
 #    자바 config로 설정하기 위해 주석 처리
   cloud:
     gateway:
@@ -25,7 +26,8 @@ spring:
 
       routes: # 개별 마이크로서비스 정보를 ROUTES에 기입
       - id : first-service
-        uri: http://localhost:8001/
+#        uri: http://localhost:8001/
+        uri: lb://FIRST-SERVICE
         predicates:
           - Path=/first-service/**
         filters: # yml 파일에 필터 적용법
@@ -50,7 +52,7 @@ spring:
           - CustomFilter2
 
 # 유레카 연동
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
