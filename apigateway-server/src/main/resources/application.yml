@@ -16,6 +16,12 @@ spring:
             pre: true
             post: true
             # pre, post 는 boolean 타입으로 true or false
+            # 필터2 추가 할 때
+#        - name: GlobalFilter2
+#          args:
+#          message: 메세지다 이놈아
+#          pre: true
+#          post: true
 
       routes: # 개별 마이크로서비스 정보를 ROUTES에 기입
       - id : first-service
@@ -27,6 +33,14 @@ spring:
 #          - AddResponseHeader=f-res, f-res-v
           # 필터명, 파라미터명이 해당 포트의 서비스(프로젝트)와 필터명, 파라미터명이 같아야 한다.
           - CustomFilter
+          # 로깅 필터 적용
+          - LogFilter
+
+          # 필터 인자 설정 법 (글로벌 필터와 동일)
+#          - name: CustomFilter
+#             message : CustomFilter !!
+#             pre : true
+#             post : true
 
       - id : second-service
         uri: http://localhost:8002/
