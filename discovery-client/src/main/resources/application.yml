@@ -5,7 +5,7 @@ server:
 spring:
   application:
     name: discovery-client
-    
+
 eureka:
   instance:
     #각 인스턴스별로 유레카에 보여지는 표기

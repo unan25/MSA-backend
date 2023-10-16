@@ -48,3 +48,9 @@ spring:
           - Path=/second-service/**
         filters:
           - CustomFilter2
+
+# 유레카 연동
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
