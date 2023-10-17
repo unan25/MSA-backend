@@ -10,8 +10,16 @@
 
 파일
 - apigateway - server : 게이트웨이
+
 - first-service : 서비스 서버 1
+  ㄴ 게이트 웨이, eureka 예제
+
 - second-service : 서비스 서버 2
+  ㄴ 게이트 웨이, eureka 예제
+
 - discovery-server : Discovery Eureka Server
+
 - discover-client : Discovery Client
+  ㄴ eureka Client 예제
+  
 - user-service : 회원가입 조회 서비스
