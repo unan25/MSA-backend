@@ -51,6 +51,12 @@ spring:
         filters:
           - CustomFilter2
 
+      # 유저 서비스
+      - id : user-service
+        uri: lb://USER-SERVICE
+        predicates:
+          - Path=/user-service/**
+
 # 유레카 연동
 eureka:
   client:
