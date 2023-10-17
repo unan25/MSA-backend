@@ -1,7 +1,11 @@
 package com.example.userservice.dto;
 
+import com.example.userservice.domain.User;
 import jakarta.validation.constraints.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter @Setter @NoArgsConstructor
 @AllArgsConstructor @Builder @ToString
@@ -16,4 +20,18 @@ public class RequestCreateUserDTO {
 
      @NotNull
      private String name;
+
+     @NotNull
+     private String userId;
+
+     public User toEntity(){
+          return User.builder()
+                  .email(this.email)
+                  .encPw(this.pw)
+                  .name(this.name)
+                  .userId(this.userId)
+                  .uuid(UUID.randomUUID().toString())
+                  .createAt(LocalDateTime.now())
+                  .build();
+     }
 }
