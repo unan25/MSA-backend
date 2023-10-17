@@ -2,6 +2,7 @@ package com.example.userservice.controller;
 
 import com.example.userservice.domain.User;
 import com.example.userservice.dto.RequestCreateUserDTO;
+import com.example.userservice.dto.ResponseFindUserDTO;
 import com.example.userservice.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +31,17 @@ public class UserController {
     }
 
     // uuid로 회원 조회
+//    @GetMapping("users/{uuid}")
+//    public ResponseEntity<?> findUserByUuid(@PathVariable String uuid){
+//        User user = userService.findUserByUuid(uuid);
+//        return ResponseEntity.ok(user);
+//    }
+
+    // ResponseFindUserDto를 통해 uuid로 회원 조회
     @GetMapping("users/{uuid}")
-    public ResponseEntity<?> findUserByUuid(@PathVariable String uuid){
-        User user = userService.findUserByUuid(uuid);
-        return ResponseEntity.ok(user);
+    public ResponseEntity<?> findUserByUuid(@PathVariable String uuid) {
+        ResponseFindUserDTO userDto = userService.findUserByUuid(uuid);
+        return ResponseEntity.ok(userDto);
     }
 
 }

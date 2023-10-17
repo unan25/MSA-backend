@@ -2,6 +2,7 @@ package com.example.userservice.service;
 
 import com.example.userservice.domain.User;
 import com.example.userservice.dto.RequestCreateUserDTO;
+import com.example.userservice.dto.ResponseFindUserDTO;
 import com.example.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,10 +22,17 @@ public class UserService {
     }
 
     // uuid로 회원 조회
-    public User findUserByUuid(String uuid){
+//    public User findUserByUuid(String uuid){
+//        User user = userRepository.findUserByUuid(uuid);
+//
+//        return user;
+//    }
+
+    // ResponseFindUserDto를 통해 uuid로 회원 조회
+    public ResponseFindUserDTO findUserByUuid(String uuid){
         User user = userRepository.findUserByUuid(uuid);
 
-        return user;
+        return new ResponseFindUserDTO(user);
     }
 
 }
