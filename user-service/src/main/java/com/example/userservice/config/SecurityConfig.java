@@ -3,6 +3,7 @@ package com.example.userservice.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -34,10 +35,16 @@ public class SecurityConfig {
         return http
                 // 변수명이 너무 길어 가독성이 해치지 않는 쪽에서 줄여도 된다. ex) a -> a 도 가능하나 가독성을 해친다.
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
-                        .requestMatchers("/user-service/health-check2").permitAll()
+                        .requestMatchers("/**").permitAll()
                         .anyRequest().hasRole("ADMIN"))
                 .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer
                         .disable())
                 .build();
+    }
+
+    // 암호화 비밀번호 저장을 위한 BCryptEncoder 빈 생성
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
