@@ -1,6 +1,5 @@
 package com.example.userservice.controller;
 
-import com.example.userservice.domain.User;
 import com.example.userservice.dto.RequestCreateUserDTO;
 import com.example.userservice.dto.ResponseFindUserDTO;
 import com.example.userservice.service.UserService;
@@ -8,8 +7,6 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("user-service")
@@ -21,6 +18,11 @@ public class UserController {
     @RequestMapping("health-check")
     public String healthCheck() {
         return "server is available !";
+    }
+
+    @RequestMapping("health-check2")
+    public String healthCheck2() {
+        return "server is available 2 !";
     }
 
     @PostMapping("users")
