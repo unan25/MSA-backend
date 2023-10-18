@@ -3,9 +3,12 @@ package com.example.userservice.service;
 import com.example.userservice.domain.User;
 import com.example.userservice.dto.RequestCreateUserDTO;
 import com.example.userservice.dto.ResponseFindUserDTO;
+import com.example.userservice.exception.UserNotFoundException;
 import com.example.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -32,7 +35,15 @@ public class UserService {
     public ResponseFindUserDTO findUserByUuid(String uuid){
         User user = userRepository.findUserByUuid(uuid);
 
+        if(user == null)
+            throw new UserNotFoundException("해당 유저는 존재하지 않습니다.");
+
         return new ResponseFindUserDTO(user);
+    }
+    
+    // 회원 전체 조회
+    public List<User> findAllUser() {
+        return userRepository.findAll();
     }
 
 }
