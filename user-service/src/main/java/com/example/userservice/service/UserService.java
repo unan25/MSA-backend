@@ -38,7 +38,10 @@ public class UserService {
         if(user == null)
             throw new UserNotFoundException("해당 유저는 존재하지 않습니다.");
 
-        return new ResponseFindUserDTO(user);
+        ResponseFindUserDTO dto = new ResponseFindUserDTO(user);
+        dto.setOrderList(List.of());
+
+        return dto;
     }
     
     // 회원 전체 조회

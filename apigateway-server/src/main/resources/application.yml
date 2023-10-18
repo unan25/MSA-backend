@@ -57,6 +57,12 @@ spring:
         predicates:
           - Path=/user-service/**
 
+        # 아이템 서비스
+      - id: item-service
+        uri: lb://ITEM-SERVICE
+        predicates:
+          - Path=/item-service/**
+
 # 유레카 연동
 eureka:
   client:
