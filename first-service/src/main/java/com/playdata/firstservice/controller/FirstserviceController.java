@@ -12,21 +12,24 @@ public class FirstserviceController {
     private final Environment env;
 
 //    @RequestMapping(value = "hello", method = {RequestMethod.GET, RequestMethod.POST}) // Get, Post 두 가지의 역할 가능하다는 예시
-    
-     @RequestMapping(value = "hello", method = RequestMethod.GET)
+
+    @RequestMapping(value = "hello", method = RequestMethod.GET)
 //    @GetMapping
     public String hello() {
         return "Hello First-Service";
     }
 
     @GetMapping("/header-check")
-    public String headerCheck(@RequestHeader("f-req") String headerMsg){
-         return headerMsg;
+    public String headerCheck(@RequestHeader("f-req") String headerMsg) {
+        return headerMsg;
     }
 
-    // 포트 번호 감지
+    // 포트 번호, config 감지
     @GetMapping("port-check")
     public String portCheck() {
-         return env.getProperty("local.server.port");
+        return env.getProperty("local.server.port")
+                + " / "
+                + env.getProperty("test.value");
     }
+
 }

@@ -33,6 +33,12 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.0.3'
 
+    // 유레카 의존성이랑 버전 맞춤
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+    implementation 'org.springframework.cloud:spring-cloud-starter-config:4.0.3'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:4.0.3'
+
 }
 
 dependencyManagement {
