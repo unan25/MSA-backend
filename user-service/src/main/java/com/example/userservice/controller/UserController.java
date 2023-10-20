@@ -7,6 +7,7 @@ import com.example.userservice.repository.UserRepository;
 import com.example.userservice.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final Environment env;
 
     @RequestMapping("health-check")
     public String healthCheck() {
@@ -59,4 +61,8 @@ public class UserController {
         return ResponseEntity.ok(userService.findAllUser());
     }
 
+    @GetMapping("config-check")
+    public String configCheck() {
+        return env.getProperty("test.value") + "  " + env.getProperty("db.username");
+    }
 }

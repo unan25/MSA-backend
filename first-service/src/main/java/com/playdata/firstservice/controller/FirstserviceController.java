@@ -27,8 +27,10 @@ public class FirstserviceController {
     // 포트 번호, config 감지
     @GetMapping("port-check")
     public String portCheck() {
-        return env.getProperty("local.server.port")
+        return "Local Server Port : "
+                + env.getProperty("local.server.port")
                 + " / "
+                + "Config Value : "
                 + env.getProperty("test.value");
     }
 
