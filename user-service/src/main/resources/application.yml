@@ -8,6 +8,8 @@ spring:
 #  profiles:
 #    #application-db.yml
 #    active: db
+  profiles:
+    active: pro
 
   # MySQL
 #  datasource:

@@ -63,6 +63,6 @@ public class UserController {
 
     @GetMapping("config-check")
     public String configCheck() {
-        return env.getProperty("test.value") + "  " + env.getProperty("db.username");
+        return env.getProperty("test.value") + "  " + env.getProperty("pro.file");
     }
 }
