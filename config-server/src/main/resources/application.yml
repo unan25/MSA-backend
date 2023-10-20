@@ -6,4 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: file://C:\msa-backend\config-resource
+          uri: file://C:\config-github-repository
+          username:
+          password:
+#          uri: file://C:\msa-backend\config-resource
