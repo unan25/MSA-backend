@@ -7,6 +7,8 @@
 4. 유레카 서버(Discovery Eureka Server / 로드밸런싱)
 5. 유레카 클라이언트 예제(Discovery Eureka Client)
 6. 회원가입 조회 서비스 예제
+7. item-service 회원 연동 및 조회 서비스
+8. Config 서버 연동 (민감정보 제공서버 구축)
 
 파일
 - apigateway - server : 게이트웨이
@@ -23,3 +25,7 @@
    ㄴ eureka Client 예제
   
 - user-service : 회원가입 조회 서비스
+
+- item-service : 회원, 상품 연동 조회 서비스
+
+- config-service : 민감정보 제공서버 구축
