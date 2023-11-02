@@ -63,6 +63,12 @@ spring:
         predicates:
           - Path=/item-service/**
 
+        # 오더 서비스
+      - id: order-service
+        uri: lb://ORDER-SERVICE
+        predicates:
+          - Path=/order-service/**
+
 # 유레카 연동
 eureka:
   client:
