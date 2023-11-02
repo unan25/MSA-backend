@@ -6,7 +6,7 @@ spring:
     name: apigateway-server
 
 
-#    자바 config로 설정하기 위해 주석 처리
+# 자바 config로 설정하기 위해 주석 처리
   cloud:
     gateway:
       # 전역 필터 적용 (글로벌 필터)

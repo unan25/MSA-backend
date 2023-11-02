@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -65,4 +66,11 @@ public class UserController {
     public String configCheck() {
         return env.getProperty("test.value") + "  " + env.getProperty("pro.file");
     }
+
+    @GetMapping("users/{userId}/orders")
+    public ResponseEntity<?> findOrdersByUserId(@PathVariable String userId){
+        ResponseFindUserDTO userDTO = userService.findUserOrderList(userId);
+        return ResponseEntity.ok(userDTO);
+    }
+
 }
