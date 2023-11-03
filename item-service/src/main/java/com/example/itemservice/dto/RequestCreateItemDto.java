@@ -5,23 +5,19 @@ import lombok.*;
 
 import java.util.UUID;
 
-@Getter
-@Setter
+@Getter @Setter @AllArgsConstructor
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@ToString
-public class RequestCreateItemDTO {
+public class RequestCreateItemDto {
 
     private String productName;
     private Long stock;
     private Long pricePerItem;
 
-    public Item toEntity() {
+    public Item toEntity(){
         return Item.builder()
                 .productId(UUID.randomUUID().toString())
-                .productName(this.productName)
                 .stock(this.stock)
+                .productName(this.productName)
                 .pricePerItem(this.pricePerItem)
                 .build();
     }

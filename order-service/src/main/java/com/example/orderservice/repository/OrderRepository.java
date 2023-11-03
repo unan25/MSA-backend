@@ -10,4 +10,6 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     // 쿼리메소드로 userId를 이용해 해당 유저의 전체 order 목록 조회
     Optional<List<Order>> findOrderByUserId(String userId);
+    Optional<List<Order>> findOrdersByProductId(String productId);
+
 }

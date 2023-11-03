@@ -27,4 +27,8 @@ public class OrderService {
 //        return optionalOrders;
         return orderRepository.findOrderByUserId(userId);
     }
+
+    public Optional<List<Order>> getOrderListByProductId(String productId){
+        return orderRepository.findOrdersByProductId(productId);
+    }
 }
