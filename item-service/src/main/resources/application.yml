@@ -24,6 +24,13 @@ spring:
         format_sql: true
     show-sql: true
 
+  # RabbitMQ
+  rabbitmq:
+    host: localhost #실제로 반영할 때는 인스턴스 내부 ip
+    username: guest
+    password: guest
+    port: 5671
+
 # Eureka
 eureka:
   instance:
