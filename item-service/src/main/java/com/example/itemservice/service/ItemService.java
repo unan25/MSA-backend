@@ -6,6 +6,7 @@ import com.example.itemservice.dto.RequestCreateItemDto;
 import com.example.itemservice.dto.ResponseOrderByItemDto;
 import com.example.itemservice.feignclient.OrderFeignClient;
 import com.example.itemservice.repository.ItemRepository;
+import com.example.itemservice.util.Producer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class ItemService {
 
     private final ItemRepository itemRepository;
     private final OrderFeignClient orderFeignClient;
+    private final Producer producer;
 
     public void createItem(RequestCreateItemDto requestCreateItemDto){
         itemRepository.save(requestCreateItemDto.toEntity());
@@ -36,6 +38,10 @@ public class ItemService {
         itemDto.setOrderList(orderList);
         // 4. 합쳐준걸 리턴해주세요.
         return itemDto;
+    }
+
+    public void publishTestMessage(String message) {
+        producer.sendTestMessage(message);
     }
 
 }

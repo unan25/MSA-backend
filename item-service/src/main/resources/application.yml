@@ -29,7 +29,7 @@ spring:
     host: localhost #실제로 반영할 때는 인스턴스 내부 ip
     username: guest
     password: guest
-    port: 5671
+    port: 5672
 
 # Eureka
 eureka:
