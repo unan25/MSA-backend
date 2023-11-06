@@ -32,7 +32,6 @@ public class ItemController {
             throws JsonProcessingException {
         // 메시지 큐로만 전달하면 됨
         itemService.publishCreateItemMessage(requestCreateItemDto);
-
 //        itemService.createItem(requestCreateItemDto);
         return ResponseEntity.ok("메시지 큐에 생성 요청 적재 완료 !");
     }
