@@ -42,17 +42,6 @@
     - 팀원 : 최성민, 호지원
 - 내용 : 패션 Web SNS
 
-[스프린트 & 스크럼](https://www.notion.so/8466652928564960977eed8f3a25b874?pvs=21) 
-
-[개발 참고용](https://www.notion.so/33d421136a9d4783b3e48c31a1d9935f?pvs=21) 
-
-[](https://www.notion.so/0d78b79081da4965aa5829bdea8a20ab?pvs=21) 
-
-[T.T (Today Trend) 프로젝트 기획서](https://www.notion.so/T-T-Today-Trend-79c945ed044d4c6aabcb6f9706bbb447?pvs=21) 
-
-기획서.docs :  https://docs.google.com/document/d/1c3OL-3ujFm0Qj7v2z1gZbOeI9wDKlpiqnzmeSQP9vQ8/edit?usp=sharing
-
-[API 명세서](https://www.notion.so/0d78b79081da4965aa5829bdea8a20ab?pvs=21)
 
 ## | 👨‍👩‍👧‍👧역할 분담
 
@@ -67,19 +56,12 @@
 - **호지원**
     - SNS 전반적인 부분
     - 댓글
-    
+      
+---    
 
 ## |✨협업 Tool
 
-Jira : https://unan.atlassian.net/jira/software/projects/SCRUM/boards/2
-
-Git hub : https://github.com/unan25/-TodayTrend
-
-[](https://www.figma.com/files/project/113809277)
-
-[ERDCloud](https://www.erdcloud.com/team/EwjtbhTTawXqcpXA8)
-
-ERD Detail : https://docs.google.com/spreadsheets/d/1C7iN0mrAWcfM2I1XmTWf0C-McXoGwBpusCJHVTlFz0g/edit?usp=sharing
+Jira, Git hub,, Figma, ERDCloud, GoolgleDocs 
 
 ---
 
@@ -117,6 +99,8 @@ ERD Detail : https://docs.google.com/spreadsheets/d/1C7iN0mrAWcfM2I1XmTWf0C-McXo
         (기준은 강사님께 똑같이 행동했을 때 할 수 있을 것인가 아닌가)
         
     2. 서로 간의 의견 충돌 시, 조 원들의 의견 듣고 따르기
+  
+---
 
 ## ⚙개발 규칙
 
@@ -128,9 +112,11 @@ ERD Detail : https://docs.google.com/spreadsheets/d/1C7iN0mrAWcfM2I1XmTWf0C-McXo
     
     ex) docs : README 수정 / feat : 유저 회원가입
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38899a17-aac5-40af-ba91-7b187416a31a/b9ffbcba-d77f-4cc7-aa68-1b6f9691668e/Untitled.png)
+   노션 확인
+
+---
     
-2. **Git Branch 생성 규칙**
+3. **Git Branch 생성 규칙**
     1. master | main (배포 가능한 상태)
     2. develop (다음 출시 버전을 개발하는 브랜치)
     3. feture (기능을 개발하는 브랜치)
@@ -139,12 +125,9 @@ ERD Detail : https://docs.google.com/spreadsheets/d/1C7iN0mrAWcfM2I1XmTWf0C-McXo
     
     ex)  회원가입 → feature/1-user-signup  |  sns feature/2-post-create
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38899a17-aac5-40af-ba91-7b187416a31a/49241703-a5e6-40fd-a962-8fdd4908d0e2/Untitled.png)
+    참고 :  [[Git] git branch & naming](https://ej-developer.tistory.com/75)
     
-    참고 : 
-    
-    [[Git] git branch & naming](https://ej-developer.tistory.com/75)
-    
+---
 
 ## 🔧기술 스택
 
@@ -186,78 +169,3 @@ ERD Detail : https://docs.google.com/spreadsheets/d/1C7iN0mrAWcfM2I1XmTWf0C-McXo
         - Jira : 프로젝트 관리
         - Notion : 문서화
         - ERD Cloud, Figma : 설계용
-
-## 📜기능 명세서
-
-[기능명세서](https://www.notion.so/c6ed862f4f064631ae33816b4b06f5f4?pvs=21)
-
-- ← 한 눈에 보기
-    
-    (이미지 더블클릭)
-    
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38899a17-aac5-40af-ba91-7b187416a31a/1188d4f7-12ea-4c9d-93c3-592a887bc190/Untitled.png)
-    
-
-이거는 선택 사항
-
-- SNS
-    - 게시물 : 게시물 업로드(+사진 필수)
-        - 첫 화면은 캐시 데이터 …
-        - 그 이후에는 서버에서 이미지 불러옴
-        - 어케 구현함? 몰?루
-    - 좋아요(+댓글), 댓글, 공유 기능
-    - 검색 필터 라벨링
-        - ex) onthelook App 필터 검색 기능
-    - 친구 태그
-        - GPS 연동 위치 표시
-    - 스토리
-    - 알람
-    - 게시물 눌렀을 때
-        - 아래에 게시물 올릴 때 선택한 태그 목록
-        - 사진, 댓글, 해당 유저의 다른 스타일 업로드
-        - 유저의 비슷한 스타일 업로드
-- 유저
-    - 회원가입 (+ 소셜 로그인)
-        - 관심사 3개 선택 ( ex. 개발, 영화, 풍경, 패션 등…)
-            - 위 관심사를 토대로 첫 화면 게시(데이터 관리…)
-        - 관심사 3개 선택 ( ex. 캐주얼, 미니멀, 스트릿 등…) - 컨셉 : 패션
-            - (팔로우, 팔로워 없을 때) 첫 게시물들은 위 관심사를 토대로 뱃지 개수, 등급 순, 좋아요, 팔로우 순 으로 게시물 노출
-    - 마이페이지
-        - 내가 작성한 게시물 조회 및 수정
-        - 개인정보 수정
-    - User간에 팔로워, 팔로잉
-    - 프로필 : 본인 계정의 프로필 설정 (배경 및 프로필 사진, 자기소개 등)
-    - 뱃지, 등급 : 특정 활동에 따른 뱃지 및 등급 지급(SNS 활성화 목적)
-    - 알람 기능 : 게시물 댓글, 좋아요 반응에 따른 알람 기능
-    - 랭킹 (포인트 지급)
-        - 럭키드로우 할인 및 확률 업
-- DM
-    - 팔로우 끼리 DM
-    - 팔로우가 아닌 경우 처리
-- 관리자
-    - 게시물, 게시글 관리
-    - 커뮤니티 카테고리 관리(카테고리 생성 및 페이징 처리)
-    - 댓글 관리
-    - 뉴스 관리
-    - 사이트 관리 (브라우저 탭, 설명, 규칙 등)
-    - 관리자 권한
-        - Master
-            - 권한 관리 및 Admin의 기능 동일 관리
-        - Admin
-            - 위 기능 관리
-        - Member = 유저
-- 커뮤니티
-    - 카테고리 별 게시글 작성
-    - 댓글, 대댓글
-    - 좋아요, 공유, 신고 기능
-    - 인기게시글 표시(좋아요, 조회수)
-    - 오늘의 패션왕
-    - 투표 기능( ex) 뭐가 더 이뻐요? 투표 기능 올리기)
-- ETC
-    - 실시간 인기 검색어 랭킹 기능
-        - 전체 및 카테고리 별 랭킹
-        - ex) 패션 : 1위 후드티 / 2위 경량패딩 등…
-    - 뉴스
-        - 해당 카테고리 별 뉴스 스크랩
-
----
