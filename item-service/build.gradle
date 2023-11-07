@@ -43,6 +43,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    // Kafka (Kafka 랑 버전 맞추기)
+    implementation ('org.springframework.kafka:spring-kafka:2.8.1')
+
 }
 
 dependencyManagement {

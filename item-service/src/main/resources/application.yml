@@ -31,6 +31,10 @@ spring:
     password: guest
     port: 5672
 
+  # Kafka
+  kafka:
+    bootstrap-servers: 9092
+
 # Eureka
 eureka:
   instance:
